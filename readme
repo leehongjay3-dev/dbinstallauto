@@ -15,6 +15,9 @@ sh /app/oraInventory/orainstRoot.sh
 sh /app/oracle/product/19/db_1/root.sh
 su - oracle -c 'export CV_ASSUME_DISTID=OEL7.2;sh /tmp/zdongh/step3-db19.sh'
 
+# 继续oem安装步骤
+oem_install.txt
+install.rsp 响应文件
 
 #26ai 基本自动化安装
 sh step2-env.sh
