@@ -20,7 +20,7 @@ grid            hard    memlock         unlimited
 
 echo "
 kernel.shmmax=6442450944 
-net.ipv4.ip_local_port_range = 9000  65500
+net.ipv4.ip_local_port_range = 11000  65500
 fs.aio-max-nr = 1048576
 fs.file-max = 6815744
 " >> /etc/sysctl.conf
