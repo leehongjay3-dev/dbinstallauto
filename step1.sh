@@ -208,21 +208,21 @@ fun_file_install() {
         fi
     done
     
-    # 设置所有权
+    # 设置所有权[安装grid的时候需要再次验证 20260212]
     log_info "设置目录所有权..."
     
     # 检查用户是否存在
     if ! id "grid" >/dev/null 2>&1; then
         log_warning "用户 grid 不存在，跳过设置grid用户相关的目录所有权"
     else
-        execute_command "chown grid:oinstall /app/oraInventory" "设置 /app/oraInventory 所有者为 grid:oinstall"
-        execute_command "chown grid:oinstall /app/grid" "设置 /app/grid 所有者为 grid:oinstall"
+        execute_command "chown -R grid:oinstall /app/oraInventory" "设置 /app/oraInventory 所有者为 grid:oinstall"
+        execute_command "chown -R grid:oinstall /app/grid" "设置 /app/grid 所有者为 grid:oinstall"
     fi
     
     if ! id "oracle" >/dev/null 2>&1; then
         log_warning "用户 oracle 不存在，跳过设置oracle用户相关的目录所有权"
     else
-        execute_command "chown -R oracle:oinstall /app/oracle" "设置 /app/oracle 所有者为 oracle:oinstall"
+        execute_command "chown -R oracle:oinstall /app" "设置 /app/oracle 所有者为 oracle:oinstall"
 		#2026 0211 权限部分
         #execute_command "chown oracle:oinstall /app/oracle/product/19/db_1" "设置 /app/oracle/product/19/db_1 所有者为 oracle:oinstall"
     fi
