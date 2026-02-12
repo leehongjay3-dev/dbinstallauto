@@ -1,1 +1,23 @@
-#readme
+#创建临时存放目录
+mkdir /tmp/zdongh
+cd /tmp/zdongh
+cp /shared/*st* .
+chmod 777 st*
+
+
+#19c 基本自动化安装
+sh step2-env.sh
+su - oracle -c 'sh /tmp/zdongh/step2-env19c.sh'
+su - oracle -c 'export CV_ASSUME_DISTID=OEL7.2;sh /tmp/zdongh/step2-19csoft.sh'
+sh /app/oraInventory/orainstRoot.sh
+sh /app/oracle/product/19/db_1/root.sh
+su - oracle -c 'export CV_ASSUME_DISTID=OEL7.2;sh /tmp/zdongh/step3-db19.sh'
+
+
+#26ai 基本自动化安装
+sh step2-env.sh
+su - oracle -c 'sh /tmp/zdongh/step2-env26ai.sh'
+su - oracle -c 'export CV_ASSUME_DISTID=OEL8.6;sh /tmp/zdongh/step2-26aisoft.sh'
+sh /app/oraInventory/orainstRoot.sh
+sh /app/oracle/product/19/db_1/root.sh
+su - oracle -c 'export CV_ASSUME_DISTID=OEL8.6;sh /tmp/zdongh/step3-db19.sh'
