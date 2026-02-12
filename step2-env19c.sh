@@ -9,6 +9,7 @@ export TNS_ADMIN=\$ORACLE_HOME/network/admin
 export NLS_DATE_FORMAT=\"yyyy-mm-dd HH24:MI:SS\"
 export LD_LIBRARY_PATH=\$ORACLE_HOME/lib
 export PATH=\$ORACLE_HOME/bin:\$PATH" >> /home/oracle/.bash_profile
+source /home/oracle/.bash_profile
 cd /shared
 unzip LINUX.X64_193000_db_home.zip -d $ORACLE_HOME
 echo "#install single db
