@@ -15,6 +15,10 @@ alter system set open_cursors=600 scope=spfile;
 alter system set processes=800 scope=spfile;
 alter system set sga_max_size=8G scope=spfile;
 alter system set sga_target=8G scope=spfile;
+alter system set db_create_online_log_dest_1='/app/oracle/oradata/ORCL';
+ALTER DATABASE ADD LOGFILE GROUP  4  size 1g;
+ALTER DATABASE ADD LOGFILE GROUP  5  size 1g;
+ALTER DATABASE ADD LOGFILE GROUP  6  size 1g;
 exec DBMS_AUTO_TASK_ADMIN.DISABLE(client_name => 'auto optimizer stats collection',operation => NULL,window_name => NULL); 
 
 
@@ -32,4 +36,12 @@ chown -R oracle:oinstall $OEM_HOME
 
 mkdir -p /app/01
 ./em13500_linux64.bin  -J-Djava.io.tmpdir=/app/01  -silent -responseFile /shared/install.rsp
+
+
+
+begin
+  for cur in ( select file#,name  from  v$datafile where CREATION_TIME>sysdate-1) loop
+      execute immediate 'alter database datafile '||cur.file#||' resize 1g';
+  end loop;
+end;
 
