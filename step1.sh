@@ -86,9 +86,9 @@ fun_rpm_install() {
     # 更新系统
     execute_command "yum update -y" "更新系统软件包"
     
-    # 安装必要的软件包
-    log_info "安装必要的软件包列表..."
-    execute_command "yum -y install bc xdpyinfo binutils elfutils-libelf elfutils-libelf-devel fontconfig-devel glibc glibc-devel ksh libaio libaio-devel libXrender libX11 libXau libXi libXtst libgcc libnsl librdmacm libstdc++ libstdc++-devel libxcb libibverbs make policycoreutils policycoreutils-python-utils smartmontools sysstat" "安装Oracle依赖包"
+    # 安装必要的软件包  glibc-devel.i686 20260212 for oem
+    log_info "安装必要的软件包列表..."  
+    execute_command "yum -y install bc xdpyinfo binutils elfutils-libelf elfutils-libelf-devel fontconfig-devel glibc glibc-devel ksh libaio libaio-devel libXrender libX11 libXau libXi libXtst libgcc libnsl librdmacm libstdc++ libstdc++-devel libxcb libibverbs make policycoreutils policycoreutils-python-utils smartmontools sysstat glibc-devel.i686" "安装Oracle依赖包"
     
     # 验证关键包是否安装成功
     log_info "验证关键包是否安装成功..."
