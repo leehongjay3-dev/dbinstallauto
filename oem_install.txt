@@ -1,0 +1,35 @@
+
+
+mkdir -p /app/01
+./em13500_linux64.bin -prereqchecker -entryPoint "oracle.sysman.top.oms_Core" -J-Djava.io.tmpdir=/app/01 -silent
+
+
+**********************************************************
+
+alter system set "_allow_insert_with_update_check"=true scope=both sid='*';
+alter system set "_use_single_log_writer"=TRUE scope=spfile sid='*';
+alter system set session_cached_cursors=300 scope=spfile;
+alter system set parallel_min_servers=0;
+alter system set parallel_max_servers=0;
+alter system set open_cursors=600 scope=spfile;
+alter system set processes=800 scope=spfile;
+alter system set sga_max_size=8G scope=spfile;
+alter system set sga_target=8G scope=spfile;
+exec DBMS_AUTO_TASK_ADMIN.DISABLE(client_name => 'auto optimizer stats collection',operation => NULL,window_name => NULL); 
+
+
+mkdir -p /app/oem
+export OEM_HOME=/app/oem
+mkdir -p $OEM_HOME/agent
+mkdir -p $OEM_HOME/gc_inst
+mkdir -p $OEM_HOME/swlib
+mkdir -p $OEM_HOME/middleware 
+chown -R oracle:oinstall $OEM_HOME
+
+
+
+
+
+mkdir -p /app/01
+./em13500_linux64.bin  -J-Djava.io.tmpdir=/app/01  -silent -responseFile /shared/install.rsp
+
