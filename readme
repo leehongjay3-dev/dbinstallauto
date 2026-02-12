@@ -21,3 +21,25 @@ su - oracle -c 'export CV_ASSUME_DISTID=OEL8.6;sh /tmp/zdongh/step2-26aisoft.sh'
 sh /app/oraInventory/orainstRoot.sh
 sh /app/oracle/product/26/db_1/root.sh
 su - oracle -c 'export CV_ASSUME_DISTID=OEL8.6;sh /tmp/zdongh/step3-db26.sh'
+
+
+
+新测试环境简介：
+[root@redhatos shared]# pwd   vmbox 共享目录存放必要文件
+/shared
+[root@redhatos shared]# ls -lrt
+total 7700582
+-rwxrwx---. 1 root vboxsf 3059705302 Sep 30 04:02 LINUX.X64_193000_db_home.zip
+-rwxrwx---. 1 root vboxsf 2406058543 Feb  4 22:46 LINUX.X64_2326100_db_home.zip
+-rwxrwx---. 1 root vboxsf      18557 Feb 11 03:08 step2-19csoft.sh
+-rwxrwx---. 1 root vboxsf       1011 Feb 11 03:08 step2-env.sh
+-rwxrwx---. 1 root vboxsf        373 Feb 11 03:08 step3-db19.sh
+-rwxrwx---. 1 root vboxsf        572 Feb 11 03:48 step0.sh
+-rwxrwx---. 1 root vboxsf       2695 Feb 11 19:54 step2-env26ai.sh
+-rwxrwx---. 1 root vboxsf      18557 Feb 11 19:55 step2-26aisoft.sh
+-rwxrwx---. 1 root vboxsf        393 Feb 11 20:11 step3-db26.sh
+-rwxrwx---. 1 root vboxsf       2694 Feb 11 20:22 step2-env19c.sh
+-rwxrwx---. 1 root vboxsf      11513 Feb 11 20:32 step1.sh
+[root@redhatos shared]# more /etc/redhat-release   红帽版本
+Red Hat Enterprise Linux release 8.6 (Ootpa)
+[root@redhatos shared]# 
