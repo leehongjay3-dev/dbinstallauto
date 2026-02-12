@@ -3,6 +3,8 @@ mkdir /tmp/zdongh
 cd /tmp/zdongh
 cp /shared/*st* .
 chmod 777 st*
+sh step0.sh
+sh step1.sh
 
 
 #19c 基本自动化安装
