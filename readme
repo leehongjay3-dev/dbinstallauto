@@ -19,6 +19,14 @@ su - oracle -c 'export CV_ASSUME_DISTID=OEL7.2;sh /tmp/zdongh/step3-db19.sh'
 oem_install.txt
 install.rsp 响应文件
 
+安装中问题，因为内存问题导致重启
+fallocate -l 16G /app/swapfile
+chmod 600 /app/swapfile
+mkswap /app/swapfile
+swapon /app/swapfile
+echo '/app/swapfile none swap sw 0 0' >> /etc/fstab
+free -g
+
 #26ai 基本自动化安装
 sh step2-env.sh
 su - oracle -c 'sh /tmp/zdongh/step2-env26ai.sh'
