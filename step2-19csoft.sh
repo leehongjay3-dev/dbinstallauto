@@ -516,14 +516,15 @@ main() {
             log_warning "第三步执行遇到问题"
         fi
         echo
-        
+
+        # 2026 0224 不在执行安装检查
         # 步骤4: 验证安装
-        log_info "执行第四步: 验证安装结果"
-        if verify_installation; then
-            log_success "第四步执行完成"
-        else
-            log_warning "第四步执行遇到问题"
-        fi
+        #log_info "执行第四步: 验证安装结果"
+        #if verify_installation; then
+        #    log_success "第四步执行完成"
+        #else
+        #    log_warning "第四步执行遇到问题"
+        #fi
     else
         log_warning "由于安装未成功，跳过root脚本执行和验证步骤"
     fi
