@@ -2,7 +2,7 @@
 mkdir /tmp/zdongh
 cd /tmp
 git  clone https://github.com/leehongjay3-dev/dbinstallauto.git
-cp -rp /tmp/dbinstallauto* /tmp/zdongh
+cp -rp /tmp/dbinstallauto/* /tmp/zdongh
 cd /tmp/zdongh
 chmod 777 st*
 sh step0.sh
