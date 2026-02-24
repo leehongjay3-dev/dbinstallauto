@@ -1,10 +1,13 @@
-#创建临时存放目录
+新使用方案
 mkdir /tmp/zdongh
+cd /tmp
+git https://github.com/leehongjay3-dev/dbinstallauto.git
+cp -rp /tmp/dbinstallauto* /tmp/zdongh
 cd /tmp/zdongh
-cp /shared/*st* .
 chmod 777 st*
 sh step0.sh
 sh step1.sh
+
 
 
 #19c 基本自动化安装
