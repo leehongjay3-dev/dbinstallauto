@@ -1,7 +1,7 @@
 新使用方案
 mkdir /tmp/zdongh
 cd /tmp
-git https://github.com/leehongjay3-dev/dbinstallauto.git
+git  clone https://github.com/leehongjay3-dev/dbinstallauto.git
 cp -rp /tmp/dbinstallauto* /tmp/zdongh
 cd /tmp/zdongh
 chmod 777 st*
