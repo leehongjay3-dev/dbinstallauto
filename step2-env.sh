@@ -23,6 +23,9 @@ kernel.shmmax=6442450944
 net.ipv4.ip_local_port_range = 11000  65500
 fs.aio-max-nr = 1048576
 fs.file-max = 6815744
+vm.oom_kill_allocating_task=0
+vm.panic_on_oom=0
+vm.overcommit_memory=2
 " >> /etc/sysctl.conf
 
 sysctl -p
